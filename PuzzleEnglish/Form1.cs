@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace PuzzleEnglish
 {
-    public partial class picCard : Form
+    public partial class form : Form
     {
-        public picCard()
+        Dictionary dic;
+
+        public form()
         {
             InitializeComponent();
+            dic = new Dictionary();
+            ShowCard(1);
+        }
+        public void ShowCard(int curr)
+        {
+            if( dic.Image(curr) != "")
+            picCard.Image = Image.FromFile(dic.Image(curr));
+            lblEnglish.Text = dic.English(curr);
+            lblRussian.Text = dic.Russian(curr);
+
+            lblVideo.Visible = dic.Video(curr) != "" ;
         }
     }
 }
