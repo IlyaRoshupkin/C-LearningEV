@@ -9,7 +9,6 @@ namespace PuzzleEnglish
 {
     class Dictionary
     {
-
         int total = 0;
         string[] english;
         string[] russian;
@@ -57,6 +56,11 @@ namespace PuzzleEnglish
                 if (!File.Exists(video[j])) video[j] = "";
                 j++;
             }
+        }
+
+        internal int Total()
+        {
+            return total;
         }
 
         public string English(int nr)

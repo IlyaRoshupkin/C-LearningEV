@@ -50,6 +50,7 @@
             this.btnPrev.TabIndex = 0;
             this.btnPrev.Text = "<<";
             this.btnPrev.UseVisualStyleBackColor = true;
+            this.btnPrev.Click += new System.EventHandler(this.btnPrev_Click);
             // 
             // btnNext
             // 
@@ -61,10 +62,12 @@
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = ">>";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblRussian
             // 
             this.lblRussian.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblRussian.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRussian.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRussian.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblRussian.Location = new System.Drawing.Point(123, 9);
@@ -72,10 +75,12 @@
             this.lblRussian.Size = new System.Drawing.Size(514, 66);
             this.lblRussian.TabIndex = 2;
             this.lblRussian.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRussian.Click += new System.EventHandler(this.lblRussian_Click);
             // 
             // lblEnglish
             // 
             this.lblEnglish.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblEnglish.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEnglish.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblEnglish.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblEnglish.Location = new System.Drawing.Point(123, 401);
@@ -83,20 +88,24 @@
             this.lblEnglish.Size = new System.Drawing.Size(514, 66);
             this.lblEnglish.TabIndex = 3;
             this.lblEnglish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblEnglish.Click += new System.EventHandler(this.lblEnglish_Click);
             // 
             // picCard
             // 
             this.picCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCard.Location = new System.Drawing.Point(123, 78);
             this.picCard.Name = "picCard";
             this.picCard.Size = new System.Drawing.Size(514, 320);
             this.picCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCard.TabIndex = 4;
             this.picCard.TabStop = false;
+            this.picCard.Click += new System.EventHandler(this.lblVideo_Click);
             // 
             // lblVideo
             // 
             this.lblVideo.AutoSize = true;
+            this.lblVideo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblVideo.Font = new System.Drawing.Font("Verdana", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblVideo.Location = new System.Drawing.Point(663, 87);
             this.lblVideo.Name = "lblVideo";
@@ -104,16 +113,20 @@
             this.lblVideo.TabIndex = 5;
             this.lblVideo.Text = "+ video";
             this.lblVideo.Visible = false;
+            this.lblVideo.Click += new System.EventHandler(this.lblVideo_Click);
             // 
             // player
             // 
+            this.player.Dock = System.Windows.Forms.DockStyle.Fill;
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(123, 77);
+            this.player.Location = new System.Drawing.Point(0, 0);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(514, 321);
+            this.player.Size = new System.Drawing.Size(760, 476);
             this.player.TabIndex = 6;
             this.player.Visible = false;
+            this.player.PlayStateChange += new AxWMPLib._WMPOCXEvents_PlayStateChangeEventHandler(this.player_PlayStateChange);
+            this.player.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.player_ClickEvent);
             // 
             // form
             // 
