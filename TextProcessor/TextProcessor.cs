@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Text;
 
 namespace TextProcessor
 {
@@ -17,7 +18,7 @@ namespace TextProcessor
                 return;
             try
             {
-                tbEditor.Text = File.ReadAllText(ofd.FileName);
+                tbEditor.Text = File.ReadAllText(ofd.FileName,Encoding.UTF8);
             }
             catch
             {
@@ -31,12 +32,20 @@ namespace TextProcessor
                 return;
             try
             {
-                File.WriteAllText(ofd.FileName, tbEditor.Text);
+                File.WriteAllText(ofd.FileName, tbEditor.Text,Encoding.UTF8);
             }
             catch
             {
                 MessageBox.Show("Error during the file saving.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnReplace_Click(object sender, EventArgs e)
+        {
+            if (tbEditor.Text == "")
+                return;
+            tbEditor.Text = tbEditor.Text.Replace(
+                tbSearch.Text, tbReplace.Text);
         }
     }
 }

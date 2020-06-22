@@ -124,6 +124,7 @@
             this.btnReplace.TabIndex = 7;
             this.btnReplace.Text = "Replase";
             this.btnReplace.UseVisualStyleBackColor = true;
+            this.btnReplace.Click += new System.EventHandler(this.btnReplace_Click);
             // 
             // FormTextProcessor
             // 
